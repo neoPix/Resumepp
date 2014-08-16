@@ -1,4 +1,4 @@
-Resume
+Resumepp
 ======
 
-Mon CV sous sa forme éxécutable C++
+Le CV de David Balan sous sa forme exécutable développée en C++
