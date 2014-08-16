@@ -1,3 +1,6 @@
+/**
+ * Created by David Balan
+ */
 #ifndef CONSOLE_H
 #define CONSOLE_H
 

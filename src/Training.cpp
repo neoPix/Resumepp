@@ -1,3 +1,7 @@
+/**
+ * Created by David Balan
+ */
+
 #include "main.h"
 
 namespace rsm{

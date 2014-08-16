@@ -1,3 +1,7 @@
+/**
+ * Created by David Balan
+ */
+
 #include "main.h"
 #include <iomanip>
 #include <sstream>
@@ -149,11 +153,6 @@ namespace rsm{
     {
         delete this->_davidbalan;
         delete this->_functions;
-    }
-
-    bool operator==(string a, string b)
-    {
-        return a.compare(b) == 0;
     }
 
     void Console::start()

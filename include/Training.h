@@ -1,3 +1,7 @@
+/**
+ * Created by David Balan
+ */
+
 #ifndef TRAINING_H
 #define TRAINING_H
 

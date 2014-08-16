@@ -1,3 +1,7 @@
+/**
+ * Created by David Balan
+ */
+
 #ifndef SKILL_H
 #define SKILL_H
 

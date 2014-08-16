@@ -1,3 +1,7 @@
+/**
+ * Created by David Balan
+ */
+
 #ifndef HOBBY_H
 #define HOBBY_H
 
