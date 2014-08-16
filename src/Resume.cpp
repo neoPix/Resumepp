@@ -40,6 +40,13 @@ vector<PersonnalLink>* Resume::personnalLinks()
     return this->_personnalLinks;
 }
 
+vector<Training>* Resume::trainings()
+{
+    if(this->_trainings == NULL)
+        this->_trainings = new vector<Training>();
+    return this->_trainings;
+}
+
 Resume::~Resume()
 {
     if(this->_hobbies != NULL)

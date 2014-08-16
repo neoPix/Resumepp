@@ -10,6 +10,7 @@ namespace rsm{
             DavidBalan();
             virtual ~DavidBalan();
         protected:
+            DavidBalan* initTrainings();
             DavidBalan* initHobbies();
             DavidBalan* initSkills();
             DavidBalan* initPersonnalLinks();

@@ -46,7 +46,7 @@ namespace rsm{
     bool consoleListHobbies(DavidBalan *davidbalan)
     {
         for(vector<Hobby>::iterator it = davidbalan->hobbies()->begin(); it != davidbalan->hobbies()->end(); ++it)
-            cout << setw(8) << "- " << it->name() << endl;
+            cout << setw(8) << right << "- " << it->name() << endl;
         return true;
     }
 
@@ -57,16 +57,16 @@ namespace rsm{
             switch(it->kind())
             {
                 case Skill::PROGRAMMING_LANGUAGE:
-                    languages << setw(8) << "- " << it->what() << endl;
+                    languages << setw(8) << right << "- " << it->what() << endl;
                     break;
                 case Skill::DATABASE:
-                    databases << setw(8) << "- " << it->what() << endl;
+                    databases << setw(8) << right << "- " << it->what() << endl;
                     break;
                 case Skill::PROJECT:
-                    projects << setw(8) << "- " << it->what() << endl;
+                    projects << setw(8) << right << "- " << it->what() << endl;
                     break;
                 case Skill::OTHER:
-                    others << setw(8) << "- " << it->what() << endl;
+                    others << setw(8) << right << "- " << it->what() << endl;
                     break;
             }
             cout << "Languages de programmation : " << endl << languages.str();
@@ -87,7 +87,40 @@ namespace rsm{
     bool consoleListLinks(DavidBalan *davidbalan)
     {
         for(vector<PersonnalLink>::iterator it = davidbalan->personnalLinks()->begin(); it != davidbalan->personnalLinks()->end(); ++it)
-            cout << setw(8) << "- " << it->value() << endl;
+            cout << setw(8) << right << "- " << it->value() << endl;
+        return true;
+    }
+
+    bool consoleListTrainnings(DavidBalan *davidbalan)
+    {
+        for(vector<Training>::iterator it = davidbalan->trainings()->begin(); it != davidbalan->trainings()->end(); ++it)
+        {
+            cout << setw(4) << right << " - " << setw(5) << left << it->year() << it->what() << endl;
+            cout << setw(8) << right << "" << it->school() << " - " << it->where() << endl;
+        }
+        return true;
+    }
+
+    bool consoleGetResume(DavidBalan *davidbalan)
+    {
+        double experience = davidbalan->experience();
+        int experienceY = experience, experienceM = (experience - experienceY) * 12;
+
+        cout << davidbalan->firstname() << " " << davidbalan->lastname() << endl;
+        cout << (int)davidbalan->age() << " ans" << endl;
+        cout << experienceY << " ans et " << experienceM << " mois d'experience." << endl;
+        cout << setfill('*') << setw(30) << '*' << endl << setfill(' ');
+        cout << " Formation" << endl;
+        consoleListTrainnings(davidbalan);
+        cout << setfill('*') << setw(30) << '*' << endl << setfill(' ');
+        cout << " Expériences" << endl;
+        //TODO : insert experience
+        cout << setfill('*') << setw(30) << '*' << endl << setfill(' ');
+        cout << " Compétences" << endl;
+        consoleListSkills(davidbalan);
+        cout << setfill('*') << setw(30) << '*' << endl << setfill(' ');
+        cout << " Occupations" << endl;
+        consoleListHobbies(davidbalan);
         return true;
     }
 
@@ -97,6 +130,8 @@ namespace rsm{
         this->_functions = new map<string, bool (*)(DavidBalan *davidbalan)>();
 
         (*this->_functions)["info"] = &consoleGetInfo;
+        (*this->_functions)["resume"] = &consoleGetResume;
+        (*this->_functions)["training"] = &consoleListTrainnings;
         (*this->_functions)["hobbies"] = &consoleListHobbies;
         (*this->_functions)["skills"] = &consoleListSkills;
         (*this->_functions)["links"] = &consoleListLinks;

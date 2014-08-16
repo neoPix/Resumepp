@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<vector>
+#include "Training.h"
 #include "Hobby.h"
 #include "Skill.h"
 #include "PersonnalLink.h"
@@ -25,6 +26,7 @@ namespace rsm{
             vector<Hobby>* hobbies();
             vector<Skill>* skills();
             vector<PersonnalLink>* personnalLinks();
+            vector<Training>* trainings();
 
             double age();
             double experience();
@@ -35,6 +37,7 @@ namespace rsm{
             vector<Hobby>* _hobbies;
             vector<Skill>* _skills;
             vector<PersonnalLink>* _personnalLinks;
+            vector<Training>* _trainings;
         private:
 
     };

@@ -9,7 +9,21 @@ namespace rsm{
             ->birth(663634800)
             ->startingAt(1346450400);
 
-        this->initHobbies()->initSkills()->initPersonnalLinks();
+        this->initTrainings()->initHobbies()->initSkills()->initPersonnalLinks();
+    }
+
+    DavidBalan* DavidBalan::initTrainings()
+    {
+        vector<Training>* trainings = this->trainings();
+        {
+            trainings->push_back(Training(2015, "Nantes - France", "Manager des Systèmes d’Information et d’Infrastructure – Systèmes d’Information", "ENI Ecole Informatique"));
+            trainings->push_back(Training(2014, "Rennes - France", "Concepteur Développeur Informatique", "ENI Ecole Informatique"));
+            trainings->push_back(Training(2012, "Rennes - France", "BTS Informatique de Gestion – Développeur d’application", "Lycée Victor et Hélène Bash"));
+            trainings->push_back(Training(2014, "Saint Brieuc - France", "Bac Professionnel MRIM", "Lycée sacré cœur"));
+            trainings->push_back(Training(2014, "Saint Brieuc - France", "BEP Métiers de l’électronique", "Lycée sacré cœur"));
+        }
+
+        return this;
     }
 
     DavidBalan* DavidBalan::initHobbies()
