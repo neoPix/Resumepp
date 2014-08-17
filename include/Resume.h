@@ -11,6 +11,7 @@
 #include "Hobby.h"
 #include "Skill.h"
 #include "PersonnalLink.h"
+#include "Experience.h"
 using namespace std;
 
 namespace rsm{
@@ -27,10 +28,11 @@ namespace rsm{
             Resume* birth(unsigned int val) { _birth = val; return this; }
             unsigned int startingAt() { return _startingAt; }
             Resume* startingAt(unsigned int val) { _startingAt = val; return this; }
-            vector<Hobby>* hobbies();
-            vector<Skill>* skills();
-            vector<PersonnalLink>* personnalLinks();
-            vector<Training>* trainings();
+            vector<Hobby*>* hobbies();
+            vector<Skill*>* skills();
+            vector<PersonnalLink*>* personnalLinks();
+            vector<Training*>* trainings();
+            vector<Experience*>* experiences();
 
             double age();
             double experience();
@@ -38,10 +40,11 @@ namespace rsm{
             string _job, _firstname, _lastname;
             unsigned int _birth;
             unsigned int _startingAt;
-            vector<Hobby>* _hobbies;
-            vector<Skill>* _skills;
-            vector<PersonnalLink>* _personnalLinks;
-            vector<Training>* _trainings;
+            vector<Hobby*>* _hobbies;
+            vector<Skill*>* _skills;
+            vector<PersonnalLink*>* _personnalLinks;
+            vector<Training*>* _trainings;
+            vector<Experience*>* _experiences;
         private:
 
     };
