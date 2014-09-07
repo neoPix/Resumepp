@@ -27,7 +27,7 @@ namespace rsm{
         cout << davidbalan->firstname() << " " << davidbalan->lastname() << " est un " << davidbalan->job()
              << " de " << (int)davidbalan->age() << " ans avec " << experienceY << " années et " << experienceM << " mois d'experiences." << endl;
 
-        cout << "Passionné de tir à l'arc " << davidbalan->hobbies()->at(0)->name() << " et de " << davidbalan->hobbies()->at(1)->name()
+        cout << "Passionné de " << davidbalan->hobbies()->at(0)->name() << " et de " << davidbalan->hobbies()->at(1)->name()
              << " il est aussi tres compétent en " << davidbalan->skills()->at(0)->what() << ", " << davidbalan->skills()->at(1)->what()
              << " et " << davidbalan->skills()->at(2)->what() << "." << endl;
 
@@ -156,6 +156,13 @@ namespace rsm{
         return true;
     }
 
+    bool consoleGenerateHtml(DavidBalan *davidbalan)
+    {
+        HtmlResume rsm(davidbalan);
+        rsm.generate();
+        return true;
+    }
+
     Console::Console()
     {
         this->_davidbalan = new DavidBalan();
@@ -173,6 +180,7 @@ namespace rsm{
         (*this->_functions)["exit"] = &consoleClose;
         (*this->_functions)["whereami"] = &consoleWhereAmI;
         (*this->_functions)["experiences"] = &consoleListExperiences;
+        (*this->_functions)["html"] = &consoleGenerateHtml;
 
         for(map<string,bool (*)(DavidBalan *davidbalan)>::iterator it = this->_functions->begin(); it != this->_functions->end(); ++it)
           commands.push_back(it->first);

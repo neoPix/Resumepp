@@ -12,6 +12,7 @@
 #include "Resume.h"
 #include "DavidBalan.h"
 #include "Console.h"
+#include "HtmlResume.h"
 
 template<typename T, size_t N>
 vector<T>* createVector(T(&tab)[N])
