@@ -5,8 +5,8 @@ dir:
 	mkdir -p obj/Release
 	mkdir -p obj/Release/src
 
-resume: main.o DavidBalan.o Console.o Experience.o Hobby.o PersonnalLink.o Resume.o Skill.o Training.o
-	g++  -o DavidBalanResume obj/Release/src/Console.o obj/Release/src/DavidBalan.o obj/Release/src/Experience.o obj/Release/src/Hobby.o obj/Release/src/main.o obj/Release/src/PersonnalLink.o obj/Release/src/Resume.o obj/Release/src/Skill.o obj/Release/src/Training.o  -s
+resume: main.o DavidBalan.o Console.o Experience.o Hobby.o PersonnalLink.o Resume.o Skill.o Training.o HtmlResume.o
+	g++  -o DavidBalanResume obj/Release/src/Console.o obj/Release/src/DavidBalan.o obj/Release/src/Experience.o obj/Release/src/Hobby.o obj/Release/src/main.o obj/Release/src/PersonnalLink.o obj/Release/src/Resume.o obj/Release/src/HtmlResume.o obj/Release/src/Skill.o obj/Release/src/Training.o  -s
 
 DavidBalan.o: src/DavidBalan.cpp
 	g++ -Wall -fexceptions -O2 -Iinclude -c src/DavidBalan.cpp -o obj/Release/src/DavidBalan.o
@@ -34,6 +34,9 @@ Skill.o: src/Skill.cpp
 
 Training.o: src/Training.cpp
 	g++ -Wall -fexceptions -O2 -Iinclude -c src/Training.cpp -o obj/Release/src/Training.o
+
+HtmlResume.o: src/Training.cpp
+	g++ -Wall -fexceptions -O2 -Iinclude -c src/HtmlResume.cpp -o obj/Release/src/HtmlResume.o
 
 clean:
 	rm -rf obj/Release/src/*.o DavidBalanResume
