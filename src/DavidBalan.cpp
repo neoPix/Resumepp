@@ -4,6 +4,7 @@
 
 #include "main.h"
 #include <algorithm>
+#include <time.h>
 
 namespace rsm{
     DavidBalan::DavidBalan():
@@ -23,8 +24,8 @@ namespace rsm{
             trainings->push_back(new Training(2015, "Nantes - France", "Manager des Systèmes d’Information et d’Infrastructure – Systèmes d’Information", "ENI Ecole Informatique"));
             trainings->push_back(new Training(2014, "Rennes - France", "Concepteur Développeur Informatique", "ENI Ecole Informatique"));
             trainings->push_back(new Training(2012, "Rennes - France", "BTS Informatique de Gestion – Développeur d’application", "Lycée Victor et Hélène Bash"));
-            trainings->push_back(new Training(2014, "Saint Brieuc - France", "Bac Professionnel MRIM", "Lycée sacré cœur"));
-            trainings->push_back(new Training(2014, "Saint Brieuc - France", "BEP Métiers de l’électronique", "Lycée sacré cœur"));
+            trainings->push_back(new Training(2010, "Saint Brieuc - France", "Bac Professionnel MRIM", "Lycée sacré cœur"));
+            trainings->push_back(new Training(2008, "Saint Brieuc - France", "BEP Métiers de l’électronique", "Lycée sacré cœur"));
         }
 
         return this;
